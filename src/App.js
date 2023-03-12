@@ -1,18 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import MainMenu from './components/MainMenu';
-import Hexmap from './components/Hexmap';
 import './styles/App.css';
-
+import HexagonGrid from "./components/hexagongrid.";
+import HexGridDemo from "./components/Grid";
 function App() {
   return (
     <div className="container">
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={MainMenu} />
-          <Route path="/hexmap" component={Hexmap} />
-        </Switch>
-      </BrowserRouter>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<MainMenu/>} />
+          <Route path="/Grid" element={<HexGridDemo/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }

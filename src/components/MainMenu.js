@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Hexmap from './Hexmap';
-
-
+import { useNavigate } from 'react-router-dom';
+import HexagonGrid from './hexagongrid.';
+import HexGridDemo from './Grid';
 
 function MainMenu() {
   const [showHowToPlay, setShowHowToPlay] = useState(false);
   const [showHexMap, setShowHexMap] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   function handleHowToPlayClick() {
     setShowHowToPlay(true);
@@ -19,8 +18,7 @@ function MainMenu() {
 
   function handlePlayClick() {
     setShowHexMap(true);
-    history.push('/hexmap');
-    window.location.href = '/hexmap.html';
+    navigate('/grid');
   }
 
   return (
@@ -45,7 +43,7 @@ function MainMenu() {
           </div>
         </div>
       )}
-       {showHexMap && <Hexmap />}
+       {showHexMap && <HexGridDemo />}
     </div>
   );
 }
