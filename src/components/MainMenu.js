@@ -18,7 +18,7 @@ function MainMenu() {
 
   function handlePlayClick() {
     setShowHexMap(true);
-    navigate('/grid');
+    navigate('/Grid');
   }
 
   return (

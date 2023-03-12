@@ -19,12 +19,18 @@ const getGridDimensions = (gridWidth, gridHeight, N) => {
     hexSize,
     hexWidth: hexSize * 2,
     hexHeight: Math.ceil(hexSize * Math.sqrt(3)),
-    rows
+    rows,
   };
 };
 
 const tryInvoke = (func, params = [], defaultValue = null) => {
   return isFunction(func) ? func(...params) : defaultValue;
+};
+
+const styles = {
+  container: {
+    overflow: "auto",
+  },
 };
 
 const HexagonGrid = (props) => {
@@ -35,7 +41,7 @@ const HexagonGrid = (props) => {
     renderHexagonContent,
     hexProps,
     x,
-    y
+    y,
   } = props;
 
   const [state, setState] = useState({
@@ -43,7 +49,7 @@ const HexagonGrid = (props) => {
     hexSize: 1,
     hexWidth: 1,
     hexHeight: 1,
-    rows: 0
+    rows: 0,
   });
 
   useEffect(() => {
@@ -56,7 +62,7 @@ const HexagonGrid = (props) => {
     const dimensions = {
       width: `${state.hexWidth}px`,
       height: `${state.hexHeight}px`,
-      x: col * state.hexSize * 3
+      x: col * state.hexSize * 3,
     };
     if (row % 2 === 1) {
       dimensions.x += state.hexSize * (3 / 2);
@@ -68,7 +74,7 @@ const HexagonGrid = (props) => {
     const dimensions = {
       y: `${row * (state.hexSize * (Math.sqrt(3) / 2))}px`,
       height: `${state.hexHeight}px`,
-      width: gridWidth
+      width: gridWidth,
     };
     if (row % 2 === 0) {
       dimensions.marginLeft = `${(state.hexSize / 2) * 3}px`;
@@ -77,7 +83,13 @@ const HexagonGrid = (props) => {
   };
 
   return (
-    <svg width={gridWidth} height={gridHeight} x={x} y={y}>
+    <svg
+      width={gridWidth}
+      height={gridHeight}
+      x={x}
+      y={y}
+      style={styles.container}
+    >
       {times(state.rows, (row) => {
         const remaining = hexagons.length - row * state.columns;
         const columns = remaining < state.columns ? remaining : state.columns;
@@ -121,14 +133,14 @@ HexagonGrid.propTypes = {
   hexProps: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   renderHexagonContent: PropTypes.func,
   x: PropTypes.number,
-  y: PropTypes.number
+  y: PropTypes.number,
 };
 
 HexagonGrid.defaultProps = {
   hexProps: {},
   renderHexagonContent: null,
   x: 0,
-  y: 0
+  y: 0,
 };
 
 export default HexagonGrid;

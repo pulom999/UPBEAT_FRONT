@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HexagonGrid from "./hexagongrid.";
 import times from "lodash/times";
+import { useNavigate } from "react-router-dom";
 
 const HexGridDemo = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === "x") {
+        const confirm = window.confirm("Go back to main menu?");
+        if (confirm) {
+          navigate("/");
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [navigate]);
+
   const getHexProps = (hexagon) => {
     return {
       style: {
@@ -27,18 +47,22 @@ const HexGridDemo = () => {
       </text>
     );
   };
-  //จำนสน 
-  let hexagons = times(102, (id) => id);
+
+  //จำนวนrow
+  let hexagons = times(300, (id) => id);
 
   return (
-    <HexagonGrid
-    //ขนาด
-      gridWidth={500}
-      gridHeight={500}
-      hexagons={hexagons}
-      hexProps={getHexProps}
-      renderHexagonContent={renderHexagonContent}
-    />
+    <div className="grid-container">
+      <HexagonGrid
+        //ขนาด
+        gridWidth={2500}
+        gridHeight={1500}
+        hexagons={hexagons}
+        hexProps={getHexProps}
+        renderHexagonContent={renderHexagonContent}
+        className="hexagon-grid"
+      />
+    </div>
   );
 };
 

@@ -1,0 +1,9 @@
+.grid-container {
+  height: 500px;
+  width: 800px;
+  overflow: scroll;
+  scroll-behavior: smooth; /* optional */
+  scroll-snap-type: x mandatory; /* optional */
+  scroll-snap-align: center; /* optional */
+  scroll-padding-left: 20px
+}
