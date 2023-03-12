@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* added this to make the container take up the full viewport height */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.play-btn {
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background-color: #ededed;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  text-align: center;
+}
+
+.htp-btn {
+  color: blue;
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
