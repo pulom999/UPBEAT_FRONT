@@ -28,13 +28,22 @@
   background-color: #ededed;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   border: none;
-  text-align: center;
+  
 }
 
 .htp-btn {
-  color: blue;
-  margin-top: 10px;
   padding: 10px 20px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background-color: #ededed;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  text-align: center;
 }
 
 .modal {
@@ -59,4 +68,18 @@
   max-width: 100%;
   max-height: 100%;
   overflow: auto;
+}
+.input-container{
+  padding: 10px 20px;
+  margin: 5px;
+  display: block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background-color: #ededed;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  width: 400px;
+
 }

@@ -38,7 +38,7 @@ const HexGridDemo = () => {
       <text
         x="50%"
         y="50%"
-        fontSize={100}
+        fontSize={0}
         fontWeight="lighter"
         style={{ fill: "white" }}
         textAnchor="middle"
@@ -49,14 +49,14 @@ const HexGridDemo = () => {
   };
 
   //จำนวนrow
-  let hexagons = times(300, (id) => id);
+  let hexagons = times(120, (id) => id);
 
   return (
     <div className="grid-container">
       <HexagonGrid
         //ขนาด
-        gridWidth={2500}
-        gridHeight={1500}
+        gridWidth={500}
+        gridHeight={700}
         hexagons={hexagons}
         hexProps={getHexProps}
         renderHexagonContent={renderHexagonContent}

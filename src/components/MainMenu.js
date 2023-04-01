@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HexagonGrid from './hexagongrid.';
 import HexGridDemo from './Grid';
+import SetConfiguration from "E:/OOPWORK/upbeat project/UPBEAT-FRONT/upbeat-front/src/page/SetConfiguration";
 
 function MainMenu() {
   const [showHowToPlay, setShowHowToPlay] = useState(false);
@@ -18,7 +19,7 @@ function MainMenu() {
 
   function handlePlayClick() {
     setShowHexMap(true);
-    navigate('/Grid');
+    navigate('./SetConfiguration');
   }
 
   return (
