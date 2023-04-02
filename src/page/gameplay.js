@@ -4,6 +4,10 @@ import InformationBox from 'E:/OOPWORK/upbeat project/UPBEAT-FRONT/upbeat-front/
 import { Link } from 'react-router-dom';
 import "E:/OOPWORK/upbeat project/UPBEAT-FRONT/upbeat-front/src/styles/App.css";
 
+
+
+
+
 function Gameplay() {
   return (
     <div>

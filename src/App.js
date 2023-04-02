@@ -7,6 +7,8 @@ import Particle from "./components/Particle";
 import SetConfiguration from "./page/SetConfiguration";
 import Gameplay from "./page/gameplay";
 import ConfigurationContext from "./ConfigurationContext.js";
+import SetPlanPlayer1 from 'E:/OOPWORK/upbeat project/UPBEAT-FRONT/upbeat-front/src/page/SetPlanPlayer1';
+import SetPlanPlayer2 from 'E:/OOPWORK/upbeat project/UPBEAT-FRONT/upbeat-front/src/page/SetPlanPlayer2';
 
 function App() {
   const [init_plan_min, setInit_plan_min] = useState(5);
@@ -47,6 +49,8 @@ function App() {
             <Route exact path="/" element={<MainMenu />} />
             <Route path="/SetConfiguration" element={<SetConfiguration />} />
             <Route path="/gameplay" element={<Gameplay />} />
+            <Route exact path="/SetPlanPlayer1" element={<SetPlanPlayer1 />} />
+            <Route exact path="/SetPlanPlayer2" element={<SetPlanPlayer2 />} />
           </Routes>
         </Router>
         <Particle />
