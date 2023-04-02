@@ -18,8 +18,17 @@ function SetConfiguration() {
 
 
   const handleNextClick = () => {
-    navigate('/gameplay');
-    navigate('/HexGridDemo', { state: { init_budget } });
+    navigate('/gameplay', { state: { 
+      init_budget: init_budget,
+      init_plan_min: init_plan_min,
+      init_plan_sec: init_plan_sec,
+      init_center_dep: init_center_dep,
+      plan_rev_min: plan_rev_min,
+      plan_rev_sec: plan_rev_sec,
+      rev_cost: rev_cost,
+      max_dep: max_dep,
+      interest_pct: interest_pct
+    }});
   };
 
   return (
