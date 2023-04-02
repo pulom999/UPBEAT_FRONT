@@ -4,14 +4,14 @@ import 'E:/OOPWORK/upbeat project/UPBEAT-FRONT/upbeat-front/src/styles/App.css';
 
 function SetConfiguration() {
 
-  const [init_plan_min, setInit_plan_min] = useState(5);
+  const [init_plan_min, setInit_plan_min] = useState(3);
   const [init_plan_sec, setInit_plan_sec] = useState(0);
-  const [init_budget, setInit_budget] = useState(5000);
+  const [init_budget, setInit_budget] = useState(500);
   const [init_center_dep, setInit_center_dep] = useState(100);
   const [plan_rev_min, setPlan_rev_min] = useState(30);
   const [plan_rev_sec, setPlan_rev_sec] = useState(0);
-  const [rev_cost, setRev_cost] = useState(100);
-  const [max_dep, setMax_dep] = useState(100000);
+  const [rev_cost, setRev_cost] = useState(50);
+  const [max_dep, setMax_dep] = useState(10000);
   const [interest_pct, setInterest_pct] = useState(5);
 
   const navigate = useNavigate();

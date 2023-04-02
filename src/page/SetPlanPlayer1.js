@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Editor from '@monaco-editor/react';
+import { Link } from 'react-router-dom';
 
 function SetPlanPlayer1() {
   const [plan1, setPlan1] = useState('Enter your construction plan here...');
@@ -10,20 +11,24 @@ function SetPlanPlayer1() {
 
   return (
     <div>
-      <h2>Setup ConstructionPlan : Player1</h2>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
+        <h2>Setup ConstructionPlan : Player1</h2>
+        
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh' }}>
         <Editor
-          height="65vh"
-          width="110vh"
+          height="60vh"
+          width="120vh"
           language="java"
           defaultValue={plan1}
           onChange={handleEditorChange}
           options={{
             scrollBeyondLastLine: false,
-            fontSize: "17px",
+            fontSize: "18px",
           }}
         />
       </div>
+      <Link to="/gameplay"><button>Back</button></Link>
     </div>
   );
 }
