@@ -2,9 +2,18 @@ import React, { useEffect } from "react";
 import HexagonGrid from "./hexagongrid.";
 import times from "lodash/times";
 import { useNavigate } from "react-router-dom";
+import InformationBox from "./InformationBox";
 
-const HexGridDemo = () => {
+const HexGridDemo = (props) => {
   const navigate = useNavigate();
+  const { init_budget } = props;
+
+  const handleBackClick = () => {
+    const confirm = window.confirm("Go back to main menu?");
+    if (confirm) {
+      navigate("/");
+    }
+  };
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -15,6 +24,7 @@ const HexGridDemo = () => {
         }
       }
     };
+
 
     window.addEventListener("keydown", handleKeyPress);
 
@@ -53,6 +63,9 @@ const HexGridDemo = () => {
 
   return (
     <div className="grid-container">
+       <button className="back-btn" onClick={handleBackClick} style={{position:'screenLeft'}}>
+        Back to main menu
+      </button>
       <HexagonGrid
         //ขนาด
         gridWidth={500}
@@ -61,6 +74,29 @@ const HexGridDemo = () => {
         hexProps={getHexProps}
         renderHexagonContent={renderHexagonContent}
         className="hexagon-grid"
+      />
+      <InformationBox
+        currentPlayerIndex={0}
+        gameStatus="In Progress"
+        action="Move"
+        direction="North"
+        value={10}
+        players={[
+          {
+            playerIndex: 1,
+            budget: init_budget,
+            cityCenterPos: [1, 1],
+            crewPos: [2, 2],
+            status: "Alive"
+          },
+          {
+            playerIndex: 2,
+            budget: init_budget,
+            cityCenterPos: [3, 3],
+            crewPos: [4, 4],
+            status: "Dead"
+          }
+        ]}
       />
     </div>
   );

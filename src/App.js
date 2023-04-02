@@ -5,6 +5,8 @@ import "./styles/App.css";
 import HexGridDemo from "./components/Grid";
 import Particle from "./components/Particle";
 import SetConfiguration from "./page/SetConfiguration";
+import Gameplay from "./page/gameplay";
+import init_budget from "./page/SetConfiguration";
 
 function App() {
   return (
@@ -13,8 +15,9 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<MainMenu />} />
-          <Route path="/Grid" element={<HexGridDemo />} />
           <Route path="/SetConfiguration" element={<SetConfiguration />} />
+          <Route path="/gameplay" element={<Gameplay />} />
+          <Route path="/HexGridDemo" element={<HexGridDemo init_budget={init_budget} />} />
         </Routes>
       </Router>
       <Particle/>

@@ -83,3 +83,12 @@
   width: 400px;
 
 }
+.Information-Box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 600px;
+  background-color: #fff;
+  border: 1px solid #000;
+}

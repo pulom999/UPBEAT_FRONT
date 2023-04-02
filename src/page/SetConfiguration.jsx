@@ -11,14 +11,15 @@ function SetConfiguration() {
   const [plan_rev_min, setPlan_rev_min] = useState(30);
   const [plan_rev_sec, setPlan_rev_sec] = useState(0);
   const [rev_cost, setRev_cost] = useState(100);
-  const [max_dep, setMax_dep] = useState(1000000);
+  const [max_dep, setMax_dep] = useState(100000);
   const [interest_pct, setInterest_pct] = useState(5);
 
   const navigate = useNavigate();
 
 
   const handleNextClick = () => {
-    navigate('/Grid');
+    navigate('/gameplay');
+    navigate('/HexGridDemo', { state: { init_budget } });
   };
 
   return (
